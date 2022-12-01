@@ -156,7 +156,6 @@ def test_opt_A():
     attendu = '\\frac{8}{3}'
     assert observe == attendu
 
-@pytest.disable()
 def test_graph_A():
     profit = Profit()
     graph_A(profit,profit.p_2)
