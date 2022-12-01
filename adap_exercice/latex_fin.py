@@ -13,6 +13,7 @@ def preambule(*packages):
         p = p +"\\usepackage{"+i+"}\n"
     return p
 
+
 def document(h: int = 4, l: int = 2, gh: Rational = Rational(1,4), gl: Rational = Rational(1,2)):
     start = "\\documentclass[11pt,a4paper,french]{article}\n\\usepackage[utf8]{inputenc}\n"
     start = start + preambule('amsmath','lmodern','babel', 'graphicx') + "\n\\graphicspath{{resolution_modele/resolution_modele/}}\n" +"\\usepackage[T1]{fontenc}\n\\usepackage[super]{nth}\n\\title{\\textbf{Exercice adaptatif}}\n\\author{VERON \\& NEPVEUX}\n"
@@ -26,15 +27,14 @@ def document(h: int = 4, l: int = 2, gh: Rational = Rational(1,4), gl: Rational 
     container = start+body+end
 
     file = "exercice.tex"
+
     if os.path.exists(file):
         os.remove(file)
 
-    fichier = open("exercice.tex","x") # "x" pour la création et l'écriture
-    fichier.write(container)
-    fichier.close()
-
-    instructions = "pdflatex "+file#"
+    with open("exercice.tex","x") as fichier: # "x" pour la création et l'écriture
+        fichier.write(container)
+    
+    instructions = "pdflatex "+file
     os.system(instructions)
-
     readpdf = "START "+file[:-4]+".pdf"
     os.system(readpdf)

@@ -48,7 +48,7 @@ def question_2(h: int = 4, l: int = 2, gh: Rational = Rational(1,4), gl: Rationa
     text2c4 = "So we obtain the form of profit below \\newline"
     prof1LL = f"$$\\pi_1^L(p_1)={latex(decompose(resol_prof1_L(profit, l))).replace('[', '(').replace(']', ')')}$$"
     text3c4 = "We take the profit of the \\nth{2} period we found before and substitute with $q_1$ to obtain :\\newline\\newline"
-    prof2LL = f"$$\\pi_2^H(p_1)={latex(decompose(resol_prof2subq_LL(profit, p_2, l, gl))).replace('[', '(').replace(']', ')')}$$"
+    prof2LL = f"$$\\pi_2^L(p_1)={latex(decompose(resol_prof2subq_LL(profit, p_2, l, gl))).replace('[', '(').replace(']', ')')}$$"
     text4c4 = "Finnaly, we sum the two profit found before to obtain the total profit below : \\newline\\newline"
     profLL = f"$$\\pi(p_1;{l},{l})={latex(decompose(resol_prof_LL(profit, p_2, l, gl))).replace('[', '(').replace(']', ')')}$$"
 
