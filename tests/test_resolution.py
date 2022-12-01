@@ -8,9 +8,10 @@ import pytest
 import sympy as sp
 from sympy import Rational
 from adap_exercice.class_define import Profit
-from adap_exercice.resolution import cn1_prof2,cs2_prof2,resolution_2,substitute_q2,profit_equilibre,resol_prof2_H,resol_prof2_L,resol_prof2subq_LL,resol_prof2subq_HH,resol_prof2subq_LH,resol_prof2subq_HL,resol_prof1_H,resol_prof1_L,resol_prof_HH,resol_prof_LL,resol_prof_HL,resol_prof_LH,cn1_profLL,cs2_profLL,prix_equilibre_LL,profit_equilibre_LL,prof_HL_A,form_A,val_A,opt_A, graph_A
+from adap_exercice.resolution import cn1_prof2,cs2_prof2,resolution_2,substitute_q2,profit_equilibre,resol_prof2_H,resol_prof2_L,resol_prof2subq_LL,resol_prof2subq_HH,resol_prof2subq_LH,resol_prof2subq_HL,resol_prof1_H,resol_prof1_L,resol_prof_HH,resol_prof_LL,resol_prof_HL,resol_prof_LH,cn1_profLL,cs2_profLL,prix_equilibre_LL,profit_equilibre_LL,prof_HL_A,form_A,opt_A, graph_A, roots_A
 from unittest.mock import patch
 import matplotlib
+
 
 def test_cn1_prof2():
     profit = Profit()
@@ -149,11 +150,6 @@ def test_form_A():
     attendu = '- \\frac{15 p_{1}^{2}}{16} + \\frac{17 p_{1}}{4} - \\frac{29}{12}'
     assert observe == attendu
 
-def test_val_A():
-    profit = Profit()
-    observe = sp.latex(val_A(profit,profit.p_2))
-    attendu = '\\left( \\frac{2}{3}, \\  \\frac{58}{15}\\right)'
-    assert observe == attendu
 
 def test_opt_A():
     profit = Profit()
@@ -164,3 +160,9 @@ def test_opt_A():
 #@patch("matplotlib.pyplot.show")
 def test_graph_A():
     graph_A()
+
+def test_roots_A():
+    profit = Profit()
+    observe = roots_A(profit,profit.p_2)
+    attendu = 'There are two roots to $A(p_1)$, he makes advertising only inside the interval formed by the two roots :$\\frac{2}{3}$ and $\\frac{58}{15}$'
+    assert observe == attendu
