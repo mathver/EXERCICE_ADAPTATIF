@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "adap-exercice"
+version = "0.1.0"
+description = ""
+authors = ["Mathieu <mathieuveron@outlook.fr>"]
+readme = "README.md"
+packages = [{include = "adap_exercice"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = {extras = ["all"], version = "^0.7.0"}
+sympy = "^1.11.1"
+
+[tool.poetry.scripts]
+adap-exercice = "adap_exercice.main:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
