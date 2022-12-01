@@ -2,7 +2,7 @@
 name = "adap-exercice"
 version = "0.1.0"
 description = "Library to create a tex and pdf file of an exercice of economics which can be modified by the user"
-authors = ["Mathieu <mathieuveron@outlook.fr>, Baptiste <baptiste.nepveux@icloud.com>"]
+authors = ["Mathieu <mathieuveron@outlook.fr>", "Baptiste <baptiste.nepveux@icloud.com>"]
 readme = "README.md"
 packages = [{include = "adap_exercice"}]
 
