@@ -35,18 +35,11 @@ per unit cost of production is 1 in the first period, and 1 − $\gamma q_1$ in 
 
 ### Installation
 
-Il y a deux manières pour installer ce module :
-
-1. Installer le package depuis PiPy avec `pip` :
+Installer le package depuis PiPy avec `pip` :
 ```sh
-py -m pip install adap_exercice
+py -m pip install adap-exercice
 ```
 
-2. Installer le module à partir du répertoire téléchargé sur GitHub (en utilisant votre propre chemin où se situe le dossier) :
-
-```sh
-py -m pip install "C:/Users/Username/Downloads/adap_exercice"
-```
 ### Fonctionnement
 
 Ce module contient deux fonctions utilisables en ligne de commandes par l'utilisateur :
