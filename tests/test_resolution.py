@@ -132,6 +132,11 @@ def test_profit_equilibre_LL():
     attendu = '\\frac{2}{3}'
     assert observe == attendu 
 
+def test_prix_equilibre_LL():
+    profit = Profit()
+    observe = sp.latex(prix_equilibre_LL)
+    attendu = '\\frac{8}{3}'
+
 def test_prof_HL_A():
     profit = Profit()
     observe = sp.latex(prof_HL_A(profit,profit.p_2))
