@@ -5,7 +5,7 @@ from .resolution import (
     profit_equilibre_LL,
     resol_prof_HL,
     graph_A,
-    roots_A
+    roots_A,
 )
 from .class_define import Profit
 
@@ -45,7 +45,7 @@ def question_4(
     root = roots_A(profit, p_2, h, l, gl)
     graph_A(profit, p_2, h, l, gl)
     fig = "\n\\includegraphics{graph.png}\n"
-    text_3 = "\\newline\\newline A is the minimum advertising level that the high-quality firm must sets to respect the incentive constraint of low quality firm." 
+    text_3 = "\\newline\\newline A is the minimum advertising level that the high-quality firm must sets to respect the incentive constraint of low quality firm."
     section_4 = (
         titre_section_4
         + "\n"

@@ -72,7 +72,7 @@ def document(
         + question_6(h, l, gh, gl)
     )
     container = start + body + end
-    
+
     file = "exercice.tex"
     if os.path.exists(file):
         os.remove(file)

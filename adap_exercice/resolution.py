@@ -551,7 +551,6 @@ def form_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1, 
     return A
 
 
-
 def opt_A(
     obj: Profit,
     var,
@@ -610,6 +609,7 @@ def graph_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1,
     )
     graph.save("./graph.png")
 
+
 def roots_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1, 2)):
     d = discriminant(form_A(obj, var, h, l, gl))
     lc = LC(form_A(obj, var, h, l, gl))
@@ -617,14 +617,26 @@ def roots_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1,
         if d < 0:
             out = "There is no real roots to $A(p_1)$, and as we can see on the graph, he always makes advertising"
         elif d == 0:
-            out = "There is only one root to $A(p_1)$, he makes advertising only if $p_1$=" + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$"
+            out = (
+                "There is only one root to $A(p_1)$, he makes advertising only if $p_1$="
+                + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$"
+            )
         elif d > 0:
-            out = "There are two roots to $A(p_1)$, he makes advertising only outside the interval formed by the two roots :" + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$ and ${latex(sp.solve(form_A(obj, var, h, l, gl))[1])}$"
+            out = (
+                "There are two roots to $A(p_1)$, he makes advertising only outside the interval formed by the two roots :"
+                + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$ and ${latex(sp.solve(form_A(obj, var, h, l, gl))[1])}$"
+            )
     elif lc < 0:
         if d < 0:
             out = "There is no real roots to $A(p_1)$, and as we can see on the graph, he never makes advertising"
         elif d == 0:
-            out = "There is only one root to $A(p_1)$, he doesn't make advertising only if $p_1$=" + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$"
+            out = (
+                "There is only one root to $A(p_1)$, he doesn't make advertising only if $p_1$="
+                + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$"
+            )
         elif d > 0:
-            out = "There are two roots to $A(p_1)$, he makes advertising only inside the interval formed by the two roots :" + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$ and ${latex(sp.solve(form_A(obj, var, h, l, gl))[1])}$"
+            out = (
+                "There are two roots to $A(p_1)$, he makes advertising only inside the interval formed by the two roots :"
+                + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$ and ${latex(sp.solve(form_A(obj, var, h, l, gl))[1])}$"
+            )
     return str(out)
