@@ -1,5 +1,5 @@
 from sympy import Symbol, latex, Rational, simplify, diff
-from .resolution import form_A, val_A, opt_A, resol_prof_HH
+from .resolution import form_A, opt_A, resol_prof_HH
 from .class_define import Profit
 
 profit = Profit()

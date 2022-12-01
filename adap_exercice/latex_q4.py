@@ -1,12 +1,11 @@
-from sympy import Symbol, latex, decompose, Rational, simplify
+from sympy import Symbol, latex, Rational
 from .resolution import (
     prof_HL_A,
     form_A,
-    val_A,
-    opt_A,
     profit_equilibre_LL,
     resol_prof_HL,
     graph_A,
+    roots_A
 )
 from .class_define import Profit
 
@@ -43,11 +42,10 @@ def question_4(
     eq_3 = f"$$\\Leftrightarrow A \geq {latex(resol_prof_HL(profit, p_2, h, l , gl))} - {latex(profit_equilibre_LL(profit))}$$"
     text_2 = "Finnaly, we obtain :\\newline\\newline"
     eq_4 = f"$$A(p_1)={latex(form_A(profit, p_2, h, l, gl))}$$\\newline\\newpage"
-    text_3 = "If we solve the previous equation thus that $A(p_1)=0$, we found two roots :\\newline\\newline"
-    root_1 = "$\\bar{p_1}=$" + f"${val_A(profit, p_2, h, l, gl)[0]}$\\newline"
-    root_2 = "\\underline{$p_1$}$=$" + f"${val_A(profit, p_2, h, l, gl)[1]}$\\newline"
+    root = roots_A(profit, p_2, h, l, gl)
     graph_A(profit, p_2, h, l, gl)
     fig = "\n\\includegraphics{graph.png}\n"
+    text_3 = "\\newline\\newline A is the minimum advertising level that the high-quality firm must sets to respect the incentive constraint of low quality firm." 
     section_4 = (
         titre_section_4
         + "\n"
@@ -63,13 +61,10 @@ def question_4(
         + "\n"
         + eq_4
         + "\n"
-        + text_3
-        + "\n"
-        + root_1
-        + "\n"
-        + root_2
         + "\n"
         + fig
+        + "\n"
+        + root
         + "\n"
         + "\\end{flushleft}"
     )

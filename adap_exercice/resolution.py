@@ -4,7 +4,8 @@ Module de résolution permettant de trouver la solution optimale au programme du
 
 import sympy as sp
 from .class_define import Profit
-from sympy import Rational
+from sympy import Rational, S, solveset, latex
+from sympy.polys.polytools import LC, discriminant
 
 
 def cn1_prof2(obj: Profit, var):
@@ -543,37 +544,12 @@ def form_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1, 
 
     Returns
     -------
-        The value of the equilibrium price.
+        The form of the advertising funtion.
 
     """
     A = sp.solve(profit_equilibre_LL(obj) > prof_HL_A(obj, var, h, l, gl), obj.A).rhs
     return A
 
-
-def val_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1, 2)):
-    """It solves the polynomial form of avertising function.
-
-    Parameters
-    ----------
-    obj : Profit
-        Profit
-    var
-        the variable to be maximized
-    h : int, optional
-        The value of high quality
-    l : int, optional
-        The value of low quality
-    gl : Rational
-        The value of gamma for low quality
-
-    Returns
-    -------
-        The value of the roots of the polynomial form of advertising function.
-
-    """
-    roots = form_A(obj, var, h, l, gl)
-    a, b = sp.solve(roots)
-    return a, b
 
 
 def opt_A(
@@ -633,3 +609,22 @@ def graph_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1,
         show=False,
     )
     graph.save("./graph.png")
+
+def roots_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1, 2)):
+    d = discriminant(form_A(obj, var, h, l, gl))
+    lc = LC(form_A(obj, var, h, l, gl))
+    if lc > 0:
+        if d < 0:
+            out = "There is no real roots to $A(p_1)$, and as we can see on the graph, he always makes advertising"
+        elif d == 0:
+            out = "There is only one root to $A(p_1)$, he makes advertising only if $p_1$=" + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$"
+        elif d > 0:
+            out = "There are two roots to $A(p_1)$, he makes advertising only outside the interval formed by the two roots :" + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$ and ${latex(sp.solve(form_A(obj, var, h, l, gl))[1])}$"
+    elif lc < 0:
+        if d < 0:
+            out = "There is no real roots to $A(p_1)$, and as we can see on the graph, he never makes advertising"
+        elif d == 0:
+            out = "There is only one root to $A(p_1)$, he doesn't make advertising only if $p_1$=" + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$"
+        elif d > 0:
+            out = "There are two roots to $A(p_1)$, he makes advertising only inside the interval formed by the two roots :" + f"${latex(sp.solve(form_A(obj, var, h, l, gl))[0])}$ and ${latex(sp.solve(form_A(obj, var, h, l, gl))[1])}$"
+    return str(out)
