@@ -1,5 +1,5 @@
 """
-Module de résolution permettant de trouver la solution optimale au programme du producteur.
+Package to find the optimal program of the monopoly.
 """
 
 import sympy as sp
@@ -599,6 +599,10 @@ def graph_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1,
         The value of low quality
     gl : Rational
         The value of gamma for low quality
+        
+    Return
+    ------
+        The graph of A
     """
     graph = sp.plot(
         form_A(obj, var, h, l, gl),
@@ -611,6 +615,25 @@ def graph_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1,
 
 
 def roots_A(obj: Profit, var, h: int = 4, l: int = 2, gl: Rational = Rational(1, 2)):
+    """It takes the A form to solve the roots.
+
+    Parameters
+    ----------
+    obj : Profit
+        Profit
+    var
+        the variable to be maximized
+    h : int, optional
+        The value of high quality
+    l : int, optional
+        The value of low quality
+    gl : Rational
+        The value of gamma for low quality
+        
+    Return
+    ------
+        The value of roots from A and the conclusion.
+    """
     d = discriminant(form_A(obj, var, h, l, gl))
     lc = LC(form_A(obj, var, h, l, gl))
     if lc > 0:

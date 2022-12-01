@@ -1,6 +1,5 @@
 import pytest
-from sympy import Symbol, latex, Rational, decompose, simplify, diff, solve
-from adap_exercice.resolution import cn1_prof2,cs2_prof2,resolution_2,substitute_q2,profit_equilibre,resol_prof2_H,resol_prof2_L,resol_prof2subq_LL,resol_prof2subq_HH,resol_prof2subq_LH,resol_prof2subq_HL,resol_prof1_H,resol_prof1_L,resol_prof_HH,resol_prof_LL,resol_prof_HL,resol_prof_LH,cn1_profLL,cs2_profLL,prix_equilibre_LL,profit_equilibre_LL,prof_HL_A,form_A,val_A,opt_A,graph_A
+from sympy import Symbol
 from adap_exercice.class_define import Profit
 from adap_exercice.latex_q1 import question_1
 from adap_exercice.latex_q2 import question_2
