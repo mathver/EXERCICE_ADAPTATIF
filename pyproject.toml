@@ -15,6 +15,12 @@ matplotlib = "^3.6.2"
 [tool.poetry.scripts]
 adap-exercice = "adap_exercice.main:app"
 
+[tool.poetry.group.dev.dependencies]
+pylama = "^8.4.1"
+black = "^22.10.0"
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
