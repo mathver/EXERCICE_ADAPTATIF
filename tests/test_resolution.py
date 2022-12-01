@@ -9,7 +9,7 @@ from sympy import Rational
 from adap_exercice.class_define import Profit
 from adap_exercice.resolution import (cn1_prof2,cs2_prof2,resolution_2,substitute_q2,profit_equilibre,resol_prof2_H,resol_prof2_L,resol_prof2subq_LL,resol_prof2subq_HH,resol_prof2subq_LH,resol_prof2subq_HL,resol_prof1_H,resol_prof1_L,resol_prof_HH,resol_prof_LL,resol_prof_HL,resol_prof_LH,cn1_profLL,cs2_profLL,prix_equilibre_LL,profit_equilibre_LL,prof_HL_A,form_A,opt_A, graph_A, roots_A)
 from unittest.mock import patch
-import matplotlib
+from matplotlib.testing.decorators import image_comparison
 
 
 def test_cn1_prof2():
@@ -156,7 +156,7 @@ def test_opt_A():
     attendu = '\\frac{8}{3}'
     assert observe == attendu
 
-#@patch("matplotlib.pyplot.show")
+@pytest.disable()
 def test_graph_A():
     profit = Profit()
     graph_A(profit,profit.p_2)
