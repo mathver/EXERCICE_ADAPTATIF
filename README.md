@@ -1,8 +1,8 @@
 # Exercice Adaptatif
 
-Ce package permet le résolution d'un exercice. Celui-ci permet aussi de modifier les paramètres de l'exercice pour laisser plus de liberté à l'utilisateur. Les réponses données par le fichier s'adapteront donc aux paramètres.
+Ce package permet la résolution d'un exercice. Celui-ci permet aussi de modifier les paramètres de l'exercice pour laisser plus de liberté à l'utilisateur. Les réponses données par le fichier s'adapteront alors aux paramètres.
 
-L'éxécution du package permet la création d'un fichier PDF à l'aide du langage LaTeX. Le fichier TeX est lui aussi récupérable pour une modification plus précise du fichier.
+L'exécution du package permet la création d'un fichier PDF à l'aide du langage LaTeX. Le fichier TeX est lui aussi récupérable pour une modification plus précise du fichier.
 
 ---
 ## Exercice 
@@ -49,7 +49,7 @@ py -m pip install "C:/Users/Username/Downloads/adap_exercice"
 ```
 ### Fonctionnement
 
-Ce module contient deux fonctions utilisables en ligne de commande par l'utilisateur :
+Ce module contient deux fonctions utilisables en ligne de commandes par l'utilisateur :
 
 1. La première permet d'obtenir la version originale de la correction de l'exercice, tous les calculs étant fait de manière symbolique grâce au module `sympy`.
 
@@ -57,8 +57,8 @@ Ce module contient deux fonctions utilisables en ligne de commande par l'utilisa
 py -m adap_exercice original
 ```
 
-2. La seconde permet de modifer les paramètres au choix de l'utilisateur à l'aide d'un prompt :
-    1. Les valeurs de qualité haute et basse.
+2. La seconde permet de modifier les paramètres au choix de l'utilisateur à l'aide d'un prompt :
+    1. Les valeurs de qualité haute et basse $s_1$ et $s_2$.
     2. Les valeurs des $\gamma$.
 
 <p align="center">
@@ -67,6 +67,12 @@ py -m adap_exercice original
 
 </p>
 
+Enfin, la commande :
+
+```sh
+py -m adap_exercice --help
+```
+Elle permet d'obtenir les différentes informations sur le package, ainsi que l'auto-complétion et les descriptions des commandes.
 ### Fichiers
 
 Le fichiers PDF s'ouvrira normalement automatiquement dans une fenêtre. Il est cependant possible de récupérer les deux fichiers dans le dossier `C:/Users/Username`.
