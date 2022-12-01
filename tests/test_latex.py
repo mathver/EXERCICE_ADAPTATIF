@@ -27,10 +27,10 @@ def test_latex_q_3():
     attendu = '\\newpage\n\\subsection{Question 3}\n\\begin{flushleft}\n\nWe have here to find the optimal strategy for a low type quality monopole in separating equilibrium. We know that in separating equilibrium, the level of advertising $A$ will be 0.\\newline\nSo we have the following program :\\newline\\newline $$\\pi(p_1;2,2) = \\left( - \\frac{15 p_{1}^{2}}{16} + \\frac{5 p_{1}}{2} - 1\\right)$$\\newline\\newline\nCN1 : $\\frac{5}{2} - \\frac{15 p_{1}}{8}$\\newline\\newline\nCS2 : $- \\frac{15}{8} < 0$\\newline\\newline\nIf we solve by $p_1$ the CN1, we obtain the equilibrium price : \\newline\\newline\n$\\Rightarrow p_L^*= \\frac{4}{3}$\\newline\\newline\nWe obtain the equilibrium profit : \\newline\\newline\n$$\\pi(\\frac{4}{3}; 2,2) = \\frac{2}{3}$$\n\\end{flushleft}'
     assert observe == attendu
 
-# def test_latex_q_4():
-#     observe = question_4()
-#     attendu = 
-#     assert attendu == observe
+def test_latex_q_4():
+    observe = question_4()
+    attendu = "\n\\subsection{Question 4}\n\\begin{flushleft}\n\nWe're looking here for the expression of $A(p_1)$, thus that the consummer believe the product to be high quality. But we need to find a level which discourage low quality firm to mimic.\\newline\nSo, we have the following equation : \\newline\\newline $$\\pi(p_1;2, 2) \\geq \\pi(p_1;4, 2) - A$$\\newline\\newline\n$$\\Leftrightarrow\\frac{2}{3}\\geq- A - \\frac{15 p_{1}^{2}}{16} + \\frac{17 p_{1}}{4} - \\frac{7}{4}$$\n$$\\Leftrightarrow A \\geq - \\frac{15 p_{1}^{2}}{16} + \\frac{17 p_{1}}{4} - \\frac{7}{4} - \\frac{2}{3}$$\nFinnaly, we obtain :\\newline\\newline\n$$A(p_1)=- \\frac{15 p_{1}^{2}}{16} + \\frac{17 p_{1}}{4} - \\frac{29}{12}$$\\newline\\newpage\nIf we solve the previous equation thus that $A(p_1)=0$, we found two roots :\\newline\\newline\n$\\bar{p_1}=$$2/3$\\newline\n\\underline{$p_1$}$=$$58/15$\\newline\n\n\\includegraphics{graph.png}\n\n\\end{flushleft}"
+    assert attendu == observe
 
 def test_latex_q_5():
     observe = question_5()
