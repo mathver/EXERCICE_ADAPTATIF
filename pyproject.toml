@@ -10,6 +10,7 @@ packages = [{include = "adap_exercice"}]
 python = "^3.11"
 typer = {extras = ["all"], version = "^0.7.0"}
 sympy = "^1.11.1"
+matplotlib = "^3.6.2"
 
 [tool.poetry.scripts]
 adap-exercice = "adap_exercice.main:app"
