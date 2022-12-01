@@ -24,7 +24,7 @@ def original():
     typer.secho(f"\n\nThe .tex and .pdf files are in the folder C:/Users/{os.environ.get('USERNAME')}", fg=typer.colors.BRIGHT_GREEN)
 
 @app.command()
-def modifier():
+def modify():
     """
     Function used to modify parameter of quality and gamma in the exercice with prompt to choose them.
     The high quality must be superior or equal to low quality.
